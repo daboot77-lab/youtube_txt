@@ -2,8 +2,9 @@ import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { ViralAnalysis } from "../types";
 
 // Initialize Gemini Client
-// IMPORTANT: Expects process.env.API_KEY to be available
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Get API key from environment variable or use a placeholder for demo
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || 'DEMO_MODE';
+const ai = new GoogleGenAI({ apiKey });
 
 const modelName = "gemini-2.5-flash";
 
